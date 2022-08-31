@@ -1,5 +1,6 @@
 {
     "name": "dogeswap",
+    "homepage": ".",
     "description": "The DogeSwap DEX monorepo",
     "private": true,
     "workspaces": [
