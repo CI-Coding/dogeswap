@@ -12,10 +12,9 @@
     ],
     "packageManager": "yarn@3.2.2",
     "scripts": {
-        "start":"yarn dev",
         "build": "concurrently \"yarn workspace @dogeswap/contracts-core build && yarn workspace @dogeswap/contracts-periphery build\" \"yarn workspace @dogeswap/sdk-core build && yarn workspace @dogeswap/v2-sdk build\" && yarn workspace @dogeswap/interface build",
         "clean": "yarn workspaces foreach run clean && hardhat clean",
-        "dev": "yarn interface:run",
+        "dev": "concurrently \"yarn localnet:run\" \"yarn localnet:deploy\" \"yarn interface:run\"",
         "interface:run": "yarn workspace @dogeswap/interface dev",
         "localnet:run": "yarn hardhat node",
         "localnet:deploy": "concurrently \"yarn workspace @dogeswap/contracts-core build\" \"yarn workspace @dogeswap/contracts-periphery build\" && yarn hardhat run --network localhost scripts/run-localnet.ts",
