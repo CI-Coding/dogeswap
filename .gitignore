@@ -59,5 +59,4 @@ cache
 cypress/fixtures/example.json
 cypress/screenshots
 cypress/videos
-dist
 typechain-types
